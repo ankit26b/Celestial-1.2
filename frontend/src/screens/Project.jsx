@@ -186,8 +186,8 @@ const Project = () => {
 
     return (
         <main className='h-screen w-screen flex'>
-            <section className="left relative flex flex-col h-screen min-w-96 bg-slate-300">
-                <header className='flex justify-between items-center p-2 px-4 w-full bg-slate-100 absolute z-10 top-0'>
+            <section className="left relative flex flex-col h-screen min-w-96 bg-slate-900">
+                <header className='flex justify-between items-center p-2 px-4 w-full bg-slate-600 text-white absolute z-10 top-0'>
                     <button className='flex gap-2' onClick={() => setIsModalOpen(true)}>
                         <i className="ri-add-fill mr-1"></i>
                         <p>Add collaborator</p>
@@ -220,7 +220,7 @@ const Project = () => {
                             className='p-2 px-4 border-none outline-none flex-grow' type="text" placeholder='Enter message' />
                         <button
                             onClick={send}
-                            className='px-5 bg-slate-950 text-white'><i className="ri-send-plane-fill"></i></button>
+                            className='px-5 bg-slate-700 text-white'><i className="ri-send-plane-fill"></i></button>
                     </div>
                 </div>
                 <div className={`sidePanel w-full h-full flex flex-col gap-2 bg-slate-50 absolute transition-all ${isSidePanelOpen ? 'translate-x-0' : '-translate-x-full'} top-0`}>
@@ -256,7 +256,7 @@ const Project = () => {
 
             <section className="right  bg-red-50 flex-grow h-full flex">
 
-                <div className="explorer h-full max-w-64 min-w-52 bg-slate-200">
+                <div className="explorer h-full max-w-64 min-w-52 bg-slate-400">
                     <div className="file-tree w-full">
                         {
                             Object.keys(fileTree).map((file, index) => (
@@ -280,7 +280,7 @@ const Project = () => {
 
                 <div className="code-editor flex flex-col flex-grow h-full shrink">
 
-                    <div className="top flex justify-between w-full">
+                    <div className="top flex justify-between w-full bg-slate-200">
 
                         <div className="files flex">
                             {
@@ -333,7 +333,7 @@ const Project = () => {
                                     })
 
                                 }}
-                                className='p-2 px-4 bg-slate-300 text-white'
+                                className='p-2 px-4 bg-slate-400 text-black text-md font-semibold'
                             >
                                 run
                             </button>

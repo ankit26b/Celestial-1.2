@@ -26,15 +26,20 @@ const Login = () => {
             localStorage.setItem('token', res.data.token)
             setUser(res.data.user)
 
-            navigate('/')
+            navigate('/launch')
         }).catch((err) => {
             console.log(err.response.data)
         })
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <div className="relative min-h-screen flex flex-col items-center justify-center text-white"
+        style={{
+          backgroundImage: "url('../bg3.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
+            <div className="bg-gray-800/80 p-8 rounded-lg shadow-lg w-full max-w-md">
                 <h2 className="text-2xl font-bold text-white mb-6">Login</h2>
                 <form
                     onSubmit={submitHandler}
@@ -62,7 +67,7 @@ const Login = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full p-3 rounded bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-3 rounded bg-black/50 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                         Login
                     </button>
