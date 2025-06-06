@@ -6,9 +6,22 @@ import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
 import projectModel from './models/project.model.js';
 import { generateResult } from './services/ai.service.js';
+const express = require('express');
+const path = require('path');
+const app = express();
 
 const port = process.env.PORT || 3000;
 
+app.get('/api/hello', (req, res) => {
+  res.json({ message: "Hello from Vercel!" });
+});
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  });
+}
 
 
 const server = http.createServer(app);
