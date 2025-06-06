@@ -34,10 +34,13 @@ const Home = () => {
     axios
       .get("/projects/all")
       .then((res) => {
-        setProject(res.data.projects);
+        console.log("API response: ", res.data)
+        const projects = res.data?.projects || [];
+        setProject(projects);
       })
       .catch((err) => {
         console.log(err);
+        setProject([]);
       });
   }, []);
 
